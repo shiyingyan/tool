@@ -1,0 +1,38 @@
+services:
+  make_data_sec:
+    container_name: make_data_sec
+    dns_search: .
+    networks:
+      scadaplus_host:
+        ipv4_address: 172.19.0.50
+    image: harbor.sanywind.net/other/make_data_sec:1.0
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /root/excel:/home/excel
+    environment:
+      - INFLUXDB_HOST=influxdb
+      - INFLUXDB_PORT=58086
+      - INFLUXDB_USERNAME=root
+      - INFLUXDB_PASSWORD=root
+      - INFLUXDB_DB=sany
+      - INFLUXDB_RP=rp_infinite_1d
+      - INFLUXDB_TABLE=WindFarmData1d
+  demo:
+    container_name: demo
+    dns: 8.8.8.8
+    dns_search: .
+    image: harbor.sanywind.net/other/make_data_sec:1.0
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /root/excel:/home/excel
+#      - /mnt/c/Users/admin/Downloads/home:/home/excel
+    environment:
+      - INFLUXDB_HOST=127.0.0.1
+      - INFLUXDB_PORT=58086
+      - INFLUXDB_USERNAME=root
+      - INFLUXDB_PASSWORD=root
+      - INFLUXDB_DB=sany
+      - INFLUXDB_RP=rp_infinite_1d
+      - INFLUXDB_TABLE=WindFarmData1d
+version: '3.7'
+x-scada-version: SYSCL-V4.1.2.0.20211126
