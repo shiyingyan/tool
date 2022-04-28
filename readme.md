@@ -27,6 +27,10 @@ client.write_points(points=points[s:e],
                         retention_policy=m.rp,
                         )
 
+
 ```
+
+- influxdb读写数据库的核心还是http，因此自己封装了一个简化版[客户端](make_data_tools/influxdb_client.py)，请参考。
+（写入时，没有对数据类型的适配）
 
 
