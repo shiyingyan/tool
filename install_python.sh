@@ -13,7 +13,7 @@ fi
 
 tar -zxvf $ssl_tar -C /usr/local/src
 cd $ssl_untar
-./configure
+./configure --prefix=/usr/local
 make && make install
 
 touch /etc/ld.so.conf.d/local.conf
