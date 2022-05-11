@@ -16,6 +16,9 @@ cd $ssl_untar
 ./configure
 make && make install
 
+touch /etc/ld.so.conf.d/local.conf
+echo "/usr/local/src" >> /etc/ld.so.conf.d/local.conf
+ldconfig -v
 
 # install gcc version8.3
 gcc_version=$(gcc --version 2>/dev/null)
