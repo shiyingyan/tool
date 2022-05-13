@@ -2,7 +2,7 @@
 
 sudo yum -y update
 sudo yum -y groupinstall "Development Tools"
-sudo yum -y install lzma gdbm gdbm-devel zlib* zlib-devel bzip2 bzip2-devel db4-devel libpcap-devel libuuid-devel libffi-devel tk tkinter tk-devel libbz2-dev readline-devel  sqlite sqlite-devel libsqlite3x-devel openssl-devel make xz xz-devel libffi-devel
+sudo yum -y install lzma gdbm gdbm-devel zlib* zlib-devel bzip2 bzip2-devel db4-devel libpcap-devel libuuid-devel libffi-devel tk tkinter tk-devel libbz2-dev readline-devel  sqlite sqlite-devel libsqlite3x-devel openssl-devel make xz xz-devel libffi-devel gcc ncurses-devel
 
 # install libressl
 ssl_tar=/usr/local/src/libressl-2.7.4.tar.gz
@@ -17,7 +17,7 @@ cd $ssl_untar
 make && make install
 
 touch /etc/ld.so.conf.d/local.conf
-echo "/usr/local/src" >> /etc/ld.so.conf.d/local.conf
+echo "/usr/local/lib" >> /etc/ld.so.conf.d/local.conf
 ldconfig -v
 
 # install gcc version8.3
