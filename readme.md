@@ -1,4 +1,4 @@
-## to install python on linux automation
+## to install python on linux automation 安装python3的自动化脚本
 ```
 sh install_python.sh
 ```
