@@ -16,8 +16,14 @@ cd $ssl_untar
 ./configure --prefix=/usr/local
 make && make install
 
-touch /etc/ld.so.conf.d/local.conf
-echo "/usr/local/lib" >> /etc/ld.so.conf.d/local.conf
+
+ld_conf=/etc/ld.so.conf.d/local.conf
+if [[ -e $ld_conf ]]; then
+    sed -i '/\/usr\/local\/lib/d' $ld_conf 2>/dev/null
+else
+    touch $ld_conf
+fi
+echo "/usr/local/lib" >> $ld_conf
 ldconfig -v
 
 # install gcc version8.3
