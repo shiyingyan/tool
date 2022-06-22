@@ -45,8 +45,8 @@ fi
 tar -xvf $src_path -C /usr/local/src 
 
 cd $src_untar
-./configure --enable-optimizations
-
+#./configure --enable-optimizations
+./configure
 make && make install
 
 rm -rf $src_untar $src_path $ssl_tar $ssl_untar
