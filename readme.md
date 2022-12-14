@@ -3,7 +3,7 @@
 sh install_python.sh
 ```
 
-_使用 [conda](https://docs.conda.io/projects/conda/en/latest) 免安装python。_
+_使用 [conda](https://docs.conda.io/projects/conda/en/latest) 快速安装python环境。_
 
 
 ## R&W influxdb database
