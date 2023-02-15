@@ -6,6 +6,11 @@ sh install_python.sh
 _使用 [conda](https://docs.conda.io/projects/conda/en/latest) 快速安装python环境。_
 
 
+## make_data_tool制作数据库数据
+
+- main.py定义数据表操作流程
+- tables.py对处理的数据表抽象化abstract class。根据表的需求，实现自己的class
+
 ## R&W influxdb database
 _项目参照make_data_tools_
 
