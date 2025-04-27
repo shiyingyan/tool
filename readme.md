@@ -1,9 +1,9 @@
-## to install python on linux automation 安装python3的自动化脚本
+## to install python on linux automation 安装python3.6的自动化脚本
 ```
 sh install_python.sh
 ```
 
-_使用 [conda](https://docs.conda.io/projects/conda/en/latest) 快速安装python环境。_
+_建议使用 [conda](https://docs.conda.io/projects/conda/en/latest)/[pyenv](https://github.com/pyenv/pyenv) 快速安装python环境。_
 
 
 ## make_data_tool制作数据库数据
